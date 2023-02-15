@@ -8,22 +8,19 @@ int number1 = Convert.ToInt32(Console.ReadLine());
 int number2 = Convert.ToInt32(Console.ReadLine());
 int number3 = Convert.ToInt32(Console.ReadLine());
 
-if (number1 > number2)
+int max = 0;
+
+if (number1 > max)
 {
-    if (number1 > number3)
-    {
-        Console.WriteLine(number1 + " самое большое");
-    }
-    else
-    {
-        Console.WriteLine(number3 + " самое большое");
-    }
+    max = number1;
 }
-else if (number2 > number3)
+if (number2 > max)
 {
-    Console.WriteLine(number2 + " самое большое");
+    max = number2;
 }
-else
+if (number3 > max)
 {
-    Console.WriteLine(number3 + " самое большое");
+    max = number3;
 }
+
+Console.WriteLine(max + " это самое большое число");
