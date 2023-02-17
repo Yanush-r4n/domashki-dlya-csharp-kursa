@@ -5,24 +5,10 @@ Console.Clear();
 Console.Write("Введи чило, а я покажу его третью цифру, начиная отсчёт с левого края - ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-if (num > 999)
+if (num > 999 || num > 99 && num < 1000 ||
+    num < -99 && num > -1000 || num < -999)
 {
-    num = num%1000/100;
-    Console.WriteLine($"{num} твоя третья цифра");
-}
-else if (num > 99 && num < 1000)
-{
-    num = num/100;
-    Console.WriteLine($"{num} твоя третья цифра");
-}
-else if (num < -99 && num > -1000)
-{
-    num = num/100*(-1);
-    Console.WriteLine($"{num} твоя третья цифра");
-}
-else if (num < -999)
-{
-    num = num%1000/100*(-1);
+    num = Math.Abs(num%1000/100);
     Console.WriteLine($"{num} твоя третья цифра");
 }
 else
