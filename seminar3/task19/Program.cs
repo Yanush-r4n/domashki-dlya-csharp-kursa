@@ -39,7 +39,3 @@ if (num / LengthOfNum(num) != num % 10)
 {
     Console.WriteLine("Не, оно не палиндром");
 }
-if (num <= 9 || num >= -9)
-{
-    Console.WriteLine("Оно вообще однозначное, отзеркалить не получиться");
-}
