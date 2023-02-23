@@ -7,7 +7,7 @@
 
 Console.Clear();
 
-int LengthOfNum (int num)
+int DigitOfNum (int num)
 {
     int length = 1;
 
@@ -23,9 +23,14 @@ int LengthOfNum (int num)
 Console.Write("Вводи любое число, которое инт позволит, а я скажу, палиндром оно, или не: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-while (num / LengthOfNum(num) == num % 10 && num > 10 || num < -10)
+if (num < 10)
 {
-    num = num % LengthOfNum(num);
+    Console.WriteLine("Это вообще однозначное число");
+}
+
+while (num / DigitOfNum(num) == num % 10 && num > 10 || num < -10)
+{
+    num = num % DigitOfNum(num);
     num = num / 10;
     
     if (num < 10)
@@ -35,11 +40,7 @@ while (num / LengthOfNum(num) == num % 10 && num > 10 || num < -10)
     }
 }
 
-if (num / LengthOfNum(num) != num % 10)
+if (num / DigitOfNum(num) != num % 10)
 {
     Console.WriteLine("Не, оно не палиндром");
-}
-if (num <= 9 || num >= -9)
-{
-    Console.WriteLine("Оно вообще однозначное, отзеркалить не получиться");
 }
