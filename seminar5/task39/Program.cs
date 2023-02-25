@@ -19,27 +19,23 @@ void ArrayOutput(int[] array)
 
 int[] ArrayOppositeElementsMultiplier(int[] array)
 {
-    double size = array.Length;
-    double multipliedArraySize = Math.Ceiling(size / 2);
-    int middleOfArray = Convert.ToInt32(multipliedArraySize);
-    int[] multipliedArray = new int[middleOfArray];
+    int size = array.Length / 2 + array.Length % 2;
+    int[] multipliedArray = new int[size];
 
-    int j = 0;
     for (int i = 0; i < multipliedArray.Length; i++)
     {
-        j++;
-        multipliedArray[i] = array[i] * array[array.Length - j];
+        multipliedArray[i] = array[i] * array[array.Length - i - 1];
 
-        if (multipliedArray.Length * 2 > array.Length)
+        if (array.Length % 2 == 1)
         {
-            multipliedArray[multipliedArray.Length - 1] = array[middleOfArray - 1];
+            multipliedArray[multipliedArray.Length - 1] = array[size - 1];
         }
     }
 
     return multipliedArray;
 }
 
-int length = 11;
+int length = 10;
 int leftRange = 0;
 int rightRange = 10;
 int[] array = CustomArray(length, leftRange, rightRange);
